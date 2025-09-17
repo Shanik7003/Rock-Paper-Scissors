@@ -71,23 +71,23 @@ function playRound(humanChoice, computerChoice) {
     } 
 }
 
-function playGame() {
-    for(let i = 0; i < 5; i++)
-    {
-        playRound(getHumanChoice(), getComputerChoice());
-    }
-    if(humanScore == computerScore) console.log("EMPATE FINAL!!! FELICIDADES A AMBOS JUGADORES")
-    else {
-        if(humanScore > computerScore){
-            console.log(`El ganador es el humano, FELICIDADES`);
-        }
-        else{
-            console.log(`El ganador es la compu, FELICIDADES`);
-        }
-    }
-}
+// function playGame() {
+//     for(let i = 0; i < 5; i++)
+//     {
+//         playRound(getHumanChoice(), getComputerChoice());
+//     }
+//     if(humanScore == computerScore) console.log("EMPATE FINAL!!! FELICIDADES A AMBOS JUGADORES")
+//     else {
+//         if(humanScore > computerScore){
+//             console.log(`El ganador es el humano, FELICIDADES`);
+//         }
+//         else{
+//             console.log(`El ganador es la compu, FELICIDADES`);
+//         }
+//     }
+// }
 
-playGame();
+// playGame();
 
 
 
