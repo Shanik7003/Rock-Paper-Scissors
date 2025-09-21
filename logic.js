@@ -71,6 +71,45 @@ function playRound(humanChoice, computerChoice) {
     } 
 }
 
+let playerChoiceSpace = document.querySelector(".PlayerChoice");
+let computerChoiceSpace = document.querySelector(".ComputerChoice");
+
+const rockButton = document.querySelector("RockButton");
+
+rockButton.addEventListener("click", )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // function playGame() {
 //     for(let i = 0; i < 5; i++)
 //     {

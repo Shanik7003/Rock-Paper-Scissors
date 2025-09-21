@@ -1,6 +1,10 @@
 .Content{
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh; /* toda la altura de la pantalla */
+    width: 100%;   /* opcional, ocupa todo el ancho */
 }
 .selections{
     display: flex;
@@ -14,8 +18,36 @@
 .GameDisplay{
     display: flex;
     flex-direction: column;
+    width: 60%;              /* ocupa 60% del ancho de la pantalla */
+    max-width: 800px;        /* pero no más de 800px en pantallas grandes */
+    min-width: 300px;        /* y nunca más chico de 300px en pantallas pequeñas */
+
+    height: auto;
+    min-height: 400px;
 }
 .Choices{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+}
+.singleChoice{
+    display: flex;
+    flex-direction: column;
+}
+.Buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.Buttons .singleButton{
+    width: 200px;   /* tamaño del botón */
+    height: 200px;
+    padding: 0;     /* quitar espacios internos */
+    border: none;
+}
+.singleButton img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* la imagen se ajusta sin deformarse */
 }
