@@ -1,0 +1,21 @@
+.Content{
+    display: flex;
+    flex-direction: row;
+}
+.selections{
+    display: flex;
+    flex-direction: column;
+}
+.choice{
+    background-color: aquamarine;
+    width: 200px;
+    height: 200px;
+}
+.GameDisplay{
+    display: flex;
+    flex-direction: column;
+}
+.Choices{
+    display: flex;
+    flex-direction: row;
+}

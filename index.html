@@ -5,42 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="logic.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="Selections">
-        <div class="textSelect">
-            <h1>Select one option</h1>
-        </div>
-        <div class="Buttons">
-            <button>
-            <img src="images/Rock.jpg" alt="Rock">
-            </button>
-            <button>
-                <img src="images/Paper.jpg" alt="Paper">
-            </button>
-            <button>
-                <img src="images/Scissors.jpg" alt="Scissors">
-            </button>
-        </div>
-    </div>
+    <div class="Content">
 
-    <div class="GameDisplay">
-        <div class="Choices">
-            <div class="PlayerChoice">
-    
+        <div class="selections">
+            <div class="textSelect">
+                <h1>Select one option</h1>
             </div>
-    
-            <div class="vsText"> 
-                <p> VS </p>
-            </div>
-    
-            <div class="ComputerChoice">
-    
+            <div class="Buttons">
+                <button>
+                <img src="images/Rock.jpg" alt="Rock">
+                </button>
+                <button>
+                    <img src="images/Paper.jpg" alt="Paper">
+                </button>
+                <button>
+                    <img src="images/Scissors.jpg" alt="Scissors">
+                </button>
             </div>
         </div>
-
-        <div class="text">
-            <!-- aqui va el texto que informa cual de los jugadores, se crea dinamicamente en JS -->
+    
+        <div class="GameDisplay">
+            <div class="Choices">
+                <div class="choice PlayerChoice">
+                    
+                </div>
+        
+                <div class="vsText"> 
+                    <p> VS </p>
+                </div>
+        
+                <div class="choice ComputerChoice">
+        
+                </div>
+            </div>
+    
+            <div class="text">
+                <!-- aqui va el texto que informa cual de los jugadores, se crea dinamicamente en JS -->
+            </div>
         </div>
     </div>
 </body>
