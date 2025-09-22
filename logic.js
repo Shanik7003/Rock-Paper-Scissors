@@ -38,8 +38,6 @@ function playRound(humanChoice, computerChoice, playerPoints, computerPoints) {
     playVisualRound(humanChoice, computerChoice);//ejecuta los cambios en la ui
 
     if(humanChoice == computerChoice){
-
-        console.log("Empate, repetimos..."); //esta linea sera eliminada mas adelante
         message.textContent = "Empate, repetimos...";
         container.appendChild(message);
         return;
@@ -48,7 +46,6 @@ function playRound(humanChoice, computerChoice, playerPoints, computerPoints) {
         if(computerChoice == "paper"){
             humanScore ++;
             playerPoints.textContent = (Number(playerPoints.textContent)+1).toString();
-            console.log("scissors vence a papel " + "punto para el humano :) " +" humanScore: "+ humanScore);
             message.textContent = "scissors vence a papel " + "punto para el humano :) " +" humanScore: "+ humanScore;
             container.appendChild(message);
             return;
@@ -56,7 +53,6 @@ function playRound(humanChoice, computerChoice, playerPoints, computerPoints) {
         else{
             computerScore ++;
             computerPoints.textContent = (Number(computerPoints.textContent)+1).toString();
-            console.log("rock vence a scissors " +" punto para la compu :( "+" compuScore: "+ computerScore);
             message.textContent = "rock vence a scissors " +" punto para la compu :( "+" compuScore: "+ computerScore;
             container.appendChild(message);
             return;
@@ -66,7 +62,6 @@ function playRound(humanChoice, computerChoice, playerPoints, computerPoints) {
         if(computerChoice == "rock"){
             humanScore ++;
             playerPoints.textContent = (Number(playerPoints.textContent)+1).toString();
-            console.log("paper vence a rock " +"punto para el humano :) "+" humanScore: "+ humanScore);
             message.textContent = "paper vence a rock " +"punto para el humano :) "+" humanScore: "+ humanScore;
             container.appendChild(message);
             return;
@@ -74,7 +69,6 @@ function playRound(humanChoice, computerChoice, playerPoints, computerPoints) {
         else{
             computerScore ++;
             computerPoints.textContent = (Number(computerPoints.textContent)+1).toString();
-            console.log("scissors vence a paper " + " punto para la compu :( "+" compuScore: "+ computerScore);
             message.textContent = "scissors vence a paper " + " punto para la compu :( "+" compuScore: "+ computerScore;
             container.appendChild(message);
             return;
@@ -84,7 +78,6 @@ function playRound(humanChoice, computerChoice, playerPoints, computerPoints) {
         if(computerChoice == "scissors"){
             humanScore ++;
             playerPoints.textContent = (Number(playerPoints.textContent)+1).toString();
-            console.log("rock vence a scissors " +"punto para el humano :) "+" humanScore: "+ humanScore);
             message.textContent = "rock vence a scissors " +"punto para el humano :) "+" humanScore: "+ humanScore;
             container.appendChild(message);
             return;
@@ -92,7 +85,6 @@ function playRound(humanChoice, computerChoice, playerPoints, computerPoints) {
         else{
             computerScore ++;
             computerPoints.textContent = (Number(computerPoints.textContent)+1).toString();
-            console.log("paper vence a rock " +" punto para la compu :(" +" compuScore: "+ computerScore);
             message.textContent = "paper vence a rock " +" punto para la compu :(" +" compuScore: "+ computerScore;
             container.appendChild(message);
             return;
@@ -180,14 +172,11 @@ scissorButton.addEventListener("click", () => playRound("scissors", getComputerC
 //     for(let i = 0; i < 5; i++)
 //     {
 //         playRound(getHumanChoice(), getComputerChoice());
-//     }
-//     if(humanScore == computerScore) console.log("EMPATE FINAL!!! FELICIDADES A AMBOS JUGADORES")
+//   
 //     else {
-//         if(humanScore > computerScore){
-//             console.log(`El ganador es el humano, FELICIDADES`);
+//         if(humanScore > computerScor
 //         }
-//         else{
-//             console.log(`El ganador es la compu, FELICIDADES`);
+//         el
 //         }
 //     }
 // }
