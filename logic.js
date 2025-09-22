@@ -28,7 +28,8 @@ function getHumanChoice() { //a el input se le pasa un prompt
 let humanScore = 0;
 let computerScore = 0;
 
-function playRound(humanChoice, computerChoice) {
+//A esta funcion se le pasa como argumentos ls jugada de player y compu y los puntos de los jugadores ya llistos para ser modificados dinamicamente
+function playRound(humanChoice, computerChoice, playerPoints, computerPoints) { 
 
     let container = document.querySelector(".text");
     let message = document.createElement("h3");
@@ -46,6 +47,7 @@ function playRound(humanChoice, computerChoice) {
     else if(humanChoice == "scissors"){
         if(computerChoice == "paper"){
             humanScore ++;
+            playerPoints.textContent = (Number(playerPoints.textContent)+1).toString();
             console.log("scissors vence a papel " + "punto para el humano :) " +" humanScore: "+ humanScore);
             message.textContent = "scissors vence a papel " + "punto para el humano :) " +" humanScore: "+ humanScore;
             container.appendChild(message);
@@ -53,6 +55,7 @@ function playRound(humanChoice, computerChoice) {
         }
         else{
             computerScore ++;
+            computerPoints.textContent = (Number(computerPoints.textContent)+1).toString();
             console.log("rock vence a scissors " +" punto para la compu :( "+" compuScore: "+ computerScore);
             message.textContent = "rock vence a scissors " +" punto para la compu :( "+" compuScore: "+ computerScore;
             container.appendChild(message);
@@ -62,6 +65,7 @@ function playRound(humanChoice, computerChoice) {
     else if(humanChoice == "paper"){
         if(computerChoice == "rock"){
             humanScore ++;
+            playerPoints.textContent = (Number(playerPoints.textContent)+1).toString();
             console.log("paper vence a rock " +"punto para el humano :) "+" humanScore: "+ humanScore);
             message.textContent = "paper vence a rock " +"punto para el humano :) "+" humanScore: "+ humanScore;
             container.appendChild(message);
@@ -69,6 +73,7 @@ function playRound(humanChoice, computerChoice) {
         }
         else{
             computerScore ++;
+            computerPoints.textContent = (Number(computerPoints.textContent)+1).toString();
             console.log("scissors vence a paper " + " punto para la compu :( "+" compuScore: "+ computerScore);
             message.textContent = "scissors vence a paper " + " punto para la compu :( "+" compuScore: "+ computerScore;
             container.appendChild(message);
@@ -78,6 +83,7 @@ function playRound(humanChoice, computerChoice) {
     else if(humanChoice == "rock"){
         if(computerChoice == "scissors"){
             humanScore ++;
+            playerPoints.textContent = (Number(playerPoints.textContent)+1).toString();
             console.log("rock vence a scissors " +"punto para el humano :) "+" humanScore: "+ humanScore);
             message.textContent = "rock vence a scissors " +"punto para el humano :) "+" humanScore: "+ humanScore;
             container.appendChild(message);
@@ -85,6 +91,7 @@ function playRound(humanChoice, computerChoice) {
         }
         else{
             computerScore ++;
+            computerPoints.textContent = (Number(computerPoints.textContent)+1).toString();
             console.log("paper vence a rock " +" punto para la compu :(" +" compuScore: "+ computerScore);
             message.textContent = "paper vence a rock " +" punto para la compu :(" +" compuScore: "+ computerScore;
             container.appendChild(message);
@@ -121,10 +128,22 @@ const rockButton = document.querySelector(".RockButton");
 const paperButton = document.querySelector(".PaperButton");
 const scissorButton = document.querySelector(".ScissorButton");
 
+const playerPointsBox = document.querySelector(".pointsPlay");
+const computerPointsBox = document.querySelector(".pointsComp");
 
-rockButton.addEventListener("click", () => playRound("rock", getComputerChoice()));
-paperButton.addEventListener("click", () => playRound("paper", getComputerChoice()));
-scissorButton.addEventListener("click", () => playRound("scissors", getComputerChoice()));
+let playerPoints = document.createElement("h1");
+let computerPoints = document.createElement("h1");
+playerPoints.textContent = 0;
+computerPoints.textContent = 0;
+playerPointsBox.appendChild(playerPoints);
+computerPointsBox.appendChild(computerPoints);
+
+rockButton.addEventListener("click", () => playRound("rock", getComputerChoice(), playerPoints, computerPoints));
+paperButton.addEventListener("click", () => playRound("paper", getComputerChoice(), playerPoints, computerPoints));
+scissorButton.addEventListener("click", () => playRound("scissors", getComputerChoice(), playerPoints, computerPoints));
+
+
+
 
 
 
