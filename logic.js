@@ -29,19 +29,33 @@ let humanScore = 0;
 let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
+
+    let container = document.querySelector(".text");
+    let message = document.createElement("h3");
+    container.textContent = ""; // lo limpio antes de ponerle un texto nuevo, creo que esto sobra 
+
+    playVisualRound(humanChoice, computerChoice);//ejecuta los cambios en la ui
+
     if(humanChoice == computerChoice){
-        console.log("Empate, repetimos...")
+
+        console.log("Empate, repetimos..."); //esta linea sera eliminada mas adelante
+        message.textContent = "Empate, repetimos...";
+        container.appendChild(message);
         return;
     }
     else if(humanChoice == "scissors"){
         if(computerChoice == "paper"){
             humanScore ++;
             console.log("scissors vence a papel " + "punto para el humano :) " +" humanScore: "+ humanScore);
+            message.textContent = "scissors vence a papel " + "punto para el humano :) " +" humanScore: "+ humanScore;
+            container.appendChild(message);
             return;
         }
         else{
             computerScore ++;
             console.log("rock vence a scissors " +" punto para la compu :( "+" compuScore: "+ computerScore);
+            message.textContent = "rock vence a scissors " +" punto para la compu :( "+" compuScore: "+ computerScore;
+            container.appendChild(message);
             return;
         }
     }
@@ -49,11 +63,15 @@ function playRound(humanChoice, computerChoice) {
         if(computerChoice == "rock"){
             humanScore ++;
             console.log("paper vence a rock " +"punto para el humano :) "+" humanScore: "+ humanScore);
+            message.textContent = "paper vence a rock " +"punto para el humano :) "+" humanScore: "+ humanScore;
+            container.appendChild(message);
             return;
         }
         else{
             computerScore ++;
-            console.log("scissors vence a paper " +" punto para la compu :( "+" compuScore: "+ computerScore);
+            console.log("scissors vence a paper " + " punto para la compu :( "+" compuScore: "+ computerScore);
+            message.textContent = "scissors vence a paper " + " punto para la compu :( "+" compuScore: "+ computerScore;
+            container.appendChild(message);
             return;
         }
     }
@@ -61,23 +79,52 @@ function playRound(humanChoice, computerChoice) {
         if(computerChoice == "scissors"){
             humanScore ++;
             console.log("rock vence a scissors " +"punto para el humano :) "+" humanScore: "+ humanScore);
+            message.textContent = "rock vence a scissors " +"punto para el humano :) "+" humanScore: "+ humanScore;
+            container.appendChild(message);
             return;
         }
         else{
             computerScore ++;
             console.log("paper vence a rock " +" punto para la compu :(" +" compuScore: "+ computerScore);
+            message.textContent = "paper vence a rock " +" punto para la compu :(" +" compuScore: "+ computerScore;
+            container.appendChild(message);
             return;
         }
     } 
 }
 
-let playerChoiceSpace = document.querySelector(".PlayerChoice");
-let computerChoiceSpace = document.querySelector(".ComputerChoice");
+function playVisualRound(humanChoice, computerChoice) {
+    let playerBox = document.querySelector(".PlayerChoice");
+    let compuBox = document.querySelector(".ComputerChoice");
 
-const rockButton = document.querySelector("RockButton");
+    // Limpiamos los divs antes de insertar la nueva jugada
+    playerBox.innerHTML = "";
+    compuBox.innerHTML = "";
 
-rockButton.addEventListener("click", )
+    // Creamos la imagen del jugador
+    const playerImg = document.createElement("img");
+    playerImg.src = `images/${humanChoice}.jpg`; // ejemplo: images/rock.jpg
+    playerImg.alt = humanChoice;
+    playerImg.classList.add("choice-image"); // opcional, para estilos CSS
+    playerBox.appendChild(playerImg);
 
+    // Creamos la imagen de la compu
+    const compuImg = document.createElement("img");
+    compuImg.src = `images/${computerChoice}.jpg`; // ejemplo: images/paper.jpg
+    compuImg.alt = computerChoice;
+    compuImg.classList.add("choice-image");
+    compuBox.appendChild(compuImg);
+}
+
+
+const rockButton = document.querySelector(".RockButton");
+const paperButton = document.querySelector(".PaperButton");
+const scissorButton = document.querySelector(".ScissorButton");
+
+
+rockButton.addEventListener("click", () => playRound("rock", getComputerChoice()));
+paperButton.addEventListener("click", () => playRound("paper", getComputerChoice()));
+scissorButton.addEventListener("click", () => playRound("scissors", getComputerChoice()));
 
 
 
